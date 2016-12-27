@@ -17,8 +17,8 @@ export class FileUploadResource {
                 return;
             }
             console.log(req.file);
-            //res.end({message: 'Your File Uploaded'});
-            res.end('Your File Uploaded');
+            //res.end('Your File Uploaded');
+            res.send({message: req.file.originalname + ', File has been Uploaded'});
             console.log('File is  Uploaded');
         });
     }

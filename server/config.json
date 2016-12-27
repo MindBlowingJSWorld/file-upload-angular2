@@ -1,4 +1,4 @@
 {
   "MONGO_DB_URL": "mongodb://localhost:27017/phrase-app-db",
-  "fileUploadPath": "/workspaces/file_upload/uploaded_files"
+  "fileUploadPath": "/workspaces/file-upload-angular2/uploaded_files"
 }

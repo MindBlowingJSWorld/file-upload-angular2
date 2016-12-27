@@ -28,11 +28,13 @@ export class FileUploaderComponent {
 
     makeFileRequest(url: string, params: Array<string>, files: Array<File>) {
         return new Promise((resolve, reject) => {
-            var formData: any = new FormData();
+            var formData: FormData = new FormData();
             var xhr = new XMLHttpRequest();
-            for (var i = 0; i < files.length; i++) {
+            /*for (var i = 0; i < files.length; i++) {
                 formData.append("uploads[]", files[i], files[i].name);
-            }
+            }*/
+            formData.append("uploads[]", files[0], files[0].name);
+
 
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4) {
@@ -47,7 +49,7 @@ export class FileUploaderComponent {
             xhr.open("POST", url, true);
 
             // To set headers the xhr should be first opened
-            xhr.setRequestHeader('Content-Type', 'multipart/form-data; boundary=blob');
+            //xhr.setRequestHeader('Content-Type', 'multipart/form-data; boundary=blob');
 
             xhr.send(formData);
         });
